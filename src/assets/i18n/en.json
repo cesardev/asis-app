@@ -1,0 +1,15 @@
+{
+  "APP": {
+    "LANGUAGE": {
+      "ES": "Spanish",
+      "EN": "English"
+    },
+    "MENU": {
+      "TITLE": "NAVIGATION MENU"
+    },
+    "SETTINGS": {
+      "TITLE": "PREFERENCES"
+    }
+  },
+  "COMPONENTS": { }
+}

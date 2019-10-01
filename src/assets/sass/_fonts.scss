@@ -1,0 +1,55 @@
+$fonts-santan: 'assets/fonts/santander';
+$fonts-roboto: 'assets/fonts/roboto';
+
+// SANTANDER
+@font-face {
+  font-family: 'SantanderLight';
+  src: url('#{$fonts-santan}/SantanderText-Light.otf');
+  /* IE9 Compat Modes */
+  src: local("SantanderLight"), local("SantanderLight"),
+    url("#{$fonts-santan}/SantanderText-Light.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Santander';
+  src: url('#{$fonts-santan}/SantanderText-Regular.otf');
+  /* IE9 Compat Modes */
+  src: local("Santander"), local("Santander"),
+    url("#{$fonts-santan}/SantanderText-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'SantanderBold';
+  src: url('#{$fonts-santan}/SantanderText-Bold.otf');
+  /* IE9 Compat Modes */
+  src: local("SantanderBold"), local("SantanderBold"),
+    url("#{$fonts-santan}/SantanderText-Bold.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'SantanderHeadline';
+  src: url('#{$fonts-santan}/SantanderHeadline-Regular.otf');
+  /* IE9 Compat Modes */
+  src: local("SantanderHeadline"), local("SantanderHeadline"),
+    url("#{$fonts-santan}/SantanderHeadline-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'SantanderHeadlineBold';
+  src: url('#{$fonts-santan}/SantanderHeadline-Bold.otf');
+  /* IE9 Compat Modes */
+  src: local("SantanderHeadlineBold"), local("SantanderHeadlineBold"),
+    url("#{$fonts-santan}/SantanderHeadline-Bold.otf") format("otf");
+}
+
+// ROBOTO
+@font-face {
+  font-family: 'Roboto';
+  src: url('#{$fonts-roboto}/RobotoRegular.eot');
+  /* IE9 Compat Modes */
+  src: local("Roboto"), local("Roboto"),
+    url('#{$fonts-roboto}/RobotoRegular.woff2') format('woff2'),
+    url('#{$fonts-roboto}/RobotoRegular.woff') format('woff'),
+    url('#{$fonts-roboto}/RobotoRegular.ttf') format('truetype'),
+    url('#{$fonts-roboto}/RobotoRegular.svg#RobotoRegular') format('svg');
+}
