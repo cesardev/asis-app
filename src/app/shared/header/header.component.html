@@ -1,0 +1,136 @@
+<header id="header" class="header">
+
+  <div class="header-start">
+    <div class="header-togglenav"
+      (click)="toggleSidebar()">
+      <div class="b-bars"
+        [class.b-open]="settings.config.isSidebarOpen == 1"
+        [class.b-close]="settings.config.isSidebarOpen == 0">
+
+        <div class="b-bar b-top">
+          <div></div><div></div>
+        </div>
+        <div class="b-bar b-middle">
+          <div></div><div></div>
+        </div>
+        <div class="b-bar b-bottom">
+          <div></div><div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-logo">
+      <img [src]="assets+'/img/LogoNeoSantan.png'" alt="Neo santander">
+    </div>
+
+    <div class="header-user">
+      <div class="img-user">
+        <img [src]="assets+'/img/user/user-default.png'" alt="Imagen usuario">
+        <i class="fa fa-camera"></i>
+      </div>
+      <div class="info-user">
+        <span><strong>11AA</strong> - Angélica Vianey González Morales</span>
+        <strong>DIRECTOR SUCURSAL AA</strong>
+        <span>La Villa</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-end">
+
+    <div class="header-navbar-search">
+
+      <ul class="header-navbar" *ngIf="!isSearch">
+        <li *ngFor="let menu of menuHeader"
+          [routerLink]="['/pages/clientes'+menu.nbUri]"
+          routerLinkActive="active">
+          <a>{{ menu.nbMenu }}<span class="badge badge-danger"
+            *ngIf="menu.cdMenu == 'MR003'">25</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- BUSCADOR -->
+      <div class="header-search" *ngIf="isSearch">
+
+        <i class="fa fa-search-plus"
+          matTooltip="Búsqueda avanzada"
+          matTooltipPosition="below">
+        </i>
+
+        <form name="formSearch" class="form-search"
+          (ngSubmit)="searchClient()">
+
+          <mat-form-field floatLabel="never" class="mr-2">
+            <mat-select placeholder="Tipo de búsqueda">
+              <mat-option *ngFor="let food of options" [value]="food.id">
+                {{food.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field floatLabel="never">
+            <input type="text" class="text-center"
+              matInput placeholder="Valor de búsqueda">
+            <span matSuffix matTooltip="Agregar a favoritos"
+              matTooltipPosition="below">
+              <i class="fa fa-star"></i>
+            </span>
+          </mat-form-field>
+
+          <button class="btn-search" color="primary"
+            mat-stroked-button matRipple>
+            Buscar
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fa fa-align-right icon-menu"
+        [matMenuTriggerFor]="menuMobile"
+        (click)="null">
+      </i>
+      <i class="fa" (click)="isSearch = !isSearch"
+        [ngClass]="{'fa-times active': isSearch}"
+        [class.fa-search]="!isSearch"
+        [matTooltip]="!isSearch ? 'Abrir búsqueda' : 'Cerrar búsqueda'"
+        matTooltipPosition="below">
+      </i>
+      <!-- <i class="fa fa-cog"></i> -->
+      <i class="fa fa-power-off"></i>
+    </div>
+  </div>
+
+</header>
+
+<mat-menu class="menumobile"
+  #menuMobile="matMenu" xPosition="before">
+  <div class="menumobile-user">
+    <div class="img">
+      <img [src]="assets+'/img/user/user-default.png'" alt="Imagen usuario">
+      <i class="fa fa-camera"></i>
+    </div>
+    <div class="info">
+      <p><strong>11AA</strong></p>
+      <p>Angélica Vianey González Morales</p>
+      <p>DIRECTOR SUCURSAL AA</p>
+      <p>La Villa</p>
+    </div>
+  </div>
+  <div class="menumobile-items">
+    <button mat-menu-item style="outline: none;">
+      <span>Mi perfil</span>
+    </button>
+    <button mat-menu-item>
+      <span>Acciones comerciales</span>
+    </button>
+    <button mat-menu-item>
+      <span>Mis referidos <span class="badge badge-danger">2</span></span>
+    </button>
+    <button mat-menu-item>
+      <span>Derivación ventanilla</span>
+    </button>
+  </div>
+</mat-menu>

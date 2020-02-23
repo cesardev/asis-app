@@ -1,0 +1,275 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/mixins';
+
+// Estilos header
+.header {
+  width: 100%;
+  height: $header-height;
+  z-index: 110;
+  @include h-space-between;
+
+  & .header-start,
+  & .header-end {
+    height: 100%;
+    @include d-flex-row;
+  }
+
+  // Barra para mostrar ocultar menu
+  & .header-togglenav {
+    width: $sidebar-mini-width;
+    height: 100%;
+    cursor: pointer;
+    @include d-flex-center;
+    // transition: all 0.2s ease-out;
+
+    & .b-bars {
+
+      &.b-open {
+        & .b-bar {
+          & div {
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+          }
+
+          & div:first-child { width: 100%; }
+          & div:last-child { width: 0%; }
+        }
+      }
+
+      &.b-close {
+        & .b-bar {
+          & div:first-child { width: 10%; }
+          & div:last-child { width: 80%; }
+        }
+      }
+
+      & .b-bar {
+        width: 2rem;
+        height: 3px;
+        @include h-space-between;
+
+        &.b-middle {
+          margin-top: 0.4rem;
+          margin-bottom: 0.4rem;
+        }
+
+        & div {
+          height: 100%;
+          transition: all 0.3s ease-in;
+          -webkit-transition: all 0.3s ease-in;
+          -moz-transition: all 0.3s ease-in;
+          -ms-transition: all 0.3s ease-in;
+          -o-transition: all 0.3s ease-in;
+        }
+      }
+    }
+  }
+
+  // Logotipo
+  & .header-logo {
+    width: $header-logo-width;
+    height: 100%;
+    padding: 0 0.5rem;
+    @include d-flex-center;
+
+    & img { height: 3.5rem; }
+  }
+
+  // Información del usuario
+  & .header-user {
+    height: 100%;
+    @include d-flex-center;
+
+    & .img-user {
+      position: relative;
+      padding: 0 0.5rem;
+      cursor: pointer;
+
+      & img { height: 3rem; }
+      & i {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    & .info-user {
+      @include v-flex-center;
+      padding: 0 0.5rem;
+      font-size: 0.8rem;
+
+      @media screen and (max-width: 1102px) {
+        display: none;
+      }
+    }
+  }
+
+  // Menu del header
+  & .header-navbar {
+    @include d-flex-row;
+    height: 100%;
+    list-style: none;
+    margin-bottom: 0;
+    margin-right: 1rem;
+
+    & li {
+      position: relative;
+      cursor: pointer;
+      outline: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        transform: scale(0);
+        transition: all 0.2s ease-in;
+      }
+
+      &.active::after {
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        transform: scale(1);
+      }
+
+      &:hover {
+        &::after {
+          display: block;
+          -ms-transform: scale(1);
+          -webkit-transform: scale(1);
+          -moz-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      & a {
+        height: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        text-decoration: none;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: box-shadow 0.1s ease-out;
+        -webkit-transition: box-shadow 0.1s ease-out;
+        -moz-transition: box-shadow 0.1s ease-out;
+        -ms-transition: box-shadow 0.1s ease-out;
+        -o-transition: box-shadow 0.1s ease-out;
+      }
+
+      & .badge {
+        margin-left: 0.5rem;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  // Iconos
+  & .header-icons {
+    height: 100%;
+    @include d-flex-center;
+
+    & i {
+      padding: 0 1rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: color 0.1s ease-out;
+      -webkit-transition: color 0.1s ease-out;
+      -moz-transition: color 0.1s ease-out;
+      -ms-transition: color 0.1s ease-out;
+      -o-transition: color 0.1s ease-out;
+
+      &:last-child {
+        margin-right: 1rem;
+        border: none;
+      }
+    }
+
+    & .icon-menu {
+      display: none;
+
+      @media screen and (max-width: 900px) {
+        display: block;
+      }
+    }
+  }
+
+  // SEARCH
+  & .header-search {
+    height: 100%;
+    @include d-flex-center;
+
+    & i {
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    & .form-search {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+
+      & .btn-search {
+        line-height: 26px;
+        margin-bottom: 1.2rem;
+        margin-left: 1rem;
+      }
+
+      & .fa-star {
+        font-size: 1rem;
+        margin-right: 0.2rem;
+      }
+    }
+  }
+}
+
+// MENU MOBILE
+.menumobile-user {
+  padding: 1rem;
+  @include h-flex-center;
+  flex-direction: column;
+  align-items: center;
+
+  & .img {
+    position: relative;
+    cursor: pointer;
+
+    & img { height: 3rem; }
+
+    & i {
+      position: absolute;
+      bottom: 0;
+      right: -.4rem;
+    }
+  }
+
+  & .info {
+    padding-top: 1rem;
+
+    & p {
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+}

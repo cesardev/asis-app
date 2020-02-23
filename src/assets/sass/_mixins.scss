@@ -1,0 +1,115 @@
+// CAJAS HORIZONTALES
+@mixin d-flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+// Sin espacio entre cada vertice
+@mixin h-space-between {
+  @include d-flex-row;
+  justify-content: space-between;
+}
+// Con espacio entre cada vertice y elementos
+@mixin h-space-around {
+  @include d-flex-row;
+  justify-content: space-around;
+}
+// Con espacios iguales entre cada elemento
+@mixin h-space-evenly {
+  @include d-flex-row;
+  justify-content: space-evenly;
+}
+// Elementos alineados al inicio
+@mixin h-flex-start {
+  @include d-flex-row;
+  justify-content: flex-start;
+}
+// Elementos alineados al centro
+@mixin h-flex-center {
+  @include d-flex-row;
+  justify-content: center;
+}
+// Elementos alineados al final
+@mixin h-flex-end {
+  @include d-flex-row;
+  justify-content: flex-end;
+}
+
+
+// CAJAS VERTICALES
+@mixin d-flex-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+// Sin espacio entre cada vertice
+@mixin v-space-between {
+  @include d-flex-column;
+  justify-content: space-between;
+}
+// Con espacio entre cada vertice y elementos
+@mixin v-space-around {
+  @include d-flex-column;
+  justify-content: space-around;
+}
+// Con espacios iguales entre cada elemento
+@mixin v-space-evenly {
+  @include d-flex-column;
+  justify-content: space-evenly;
+}
+// Elementos alineados al inicio
+@mixin v-flex-start {
+  @include d-flex-column;
+  justify-content: flex-start;
+}
+// Elementos alineados al centro
+@mixin v-flex-center {
+  @include d-flex-column;
+  justify-content: center;
+}
+// Elementos alineados al final
+@mixin v-flex-end {
+  @include d-flex-column;
+  justify-content: flex-end;
+}
+
+// CENTRAR VERTICAL Y HORIZONTALMENTE EN FILAS
+@mixin d-flex-center {
+  @include d-flex-row;
+  align-items: center;
+  justify-content: center;
+}
+// CENTRAR VERTICAL Y HORIZONTALMENTE EN COLUMNAS
+@mixin vd-flex-center {
+  @include d-flex-column;
+  align-items: center;
+  justify-content: center;
+}
+
+// VARIANTE TABLE
+@mixin table-row-variant($state, $background) {
+  .table-#{$state} {
+    &,
+    > th,
+    > td {
+      background-color: $background;
+    }
+  }
+  .table-hover {
+    $hover-background: darken($background, 5%);
+    .table-#{$state} {
+      @include hover {
+        background-color: $hover-background;
+
+        > td,
+        > th {
+          background-color: $hover-background;
+        }
+      }
+    }
+  }
+}
+
+@mixin hover {
+  &:hover { @content }
+}

@@ -1,11 +1,25 @@
-/**** APPLICATION ****/
+// GENERAL
 $font-family: 'Santander', sans-serif;
 $fontsize-main: 14px;
 
-$header-height: 3rem;
+// SIDEBAR
+$sidebar-mini-width: 4.5rem;
+$sidebar-width: 13.2rem;
+$box-shadow-sidebar: 0 -2px 4px 0px rgba(38, 38, 38, 0.3);
 
-$footer-height: 2rem;
+// HEADER
+$header-height: 4rem;
+$header-logo-width: #{$sidebar-width - $sidebar-mini-width};
 
-$focus-border: rgba(102, 102, 102, 0.6);
-$normal-border: #ced4da;
-$separator-border: #eaeaea;
+// NAVBAR
+$navbar-height: 2.5rem;
+$box-shadow-navbar: 0 2px 4px 0 rgba(38, 38, 38, 0.3);
+
+// ROUTES
+$padding-route: 1.5rem 1rem;
+
+// FOOTER
+$footer-height: 3rem;
+
+// TABLES
+$table-header-height: 3rem;

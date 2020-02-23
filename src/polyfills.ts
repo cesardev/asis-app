@@ -32,6 +32,8 @@ import 'core-js/es/regexp';
 import 'core-js/es/map';
 import 'core-js/es/weak-map';
 import 'core-js/es/set';
+import 'core-js/es/promise';
+import 'core-js/es/json';
 
 /** IE10 and IE11 requires the following for the Reflect API. */
 import 'core-js/es/reflect';
@@ -80,6 +82,7 @@ import 'web-animations-js';  // Run `npm install --save web-animations-js`.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
+import 'hammerjs';
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

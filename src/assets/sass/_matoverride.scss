@@ -1,0 +1,211 @@
+// MAT CARD
+.mat-card {
+
+  &:not([class*=mat-elevation-z]) {
+    box-shadow: $box-shadow-lg !important;
+  }
+
+  color: $color-txt-box !important;
+  background-color: $bg-box;
+  // border-top: 2px solid $color-border-card;
+
+  & .mat-card-header {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $border-color-sm;
+
+    & .mat-card-header-text {
+      text-align: center;
+      width: 100%;
+      margin: 0 !important;
+      font-weight: bold;
+      color: $color-txt-box;
+    }
+  }
+
+  & .mat-form-field {
+    & .mat-form-field-label {
+      color: $color-txt-box !important;
+    }
+  }
+
+  & .mat-card-actions {
+    padding-top: 1rem;
+    border-top: 1px solid $border-color-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// BUTTON
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
+  border-color: map-get($mat-santan, 500);
+}
+
+// MAT-FORM
+.mat-form-field {
+  // margin-bottom: 0.5rem;
+
+  &.mat-form-field-appearance-outline {
+    &.mat-form-field-invalid {
+      &.mat-form-field-invalid {
+        & .mat-form-field-outline-thick {
+          color: $txt-error-color;
+        }
+      }
+    }
+
+    & .mat-form-field-outline-start,
+    & .mat-form-field-outline-gap,
+    & .mat-form-field-outline-end {
+      border-color: $color-components;
+    }
+  }
+
+  // Input
+  & .mat-form-field-wrapper {
+    & .mat-form-field-underline {
+      background-color: $color-components;
+    }
+  }
+
+  & .mat-form-field-label {
+    color: $color-components;
+  }
+}
+
+// Inputs
+.mat-focused {
+  & .mat-form-field-prefix {
+    color: map-get($mat-santan, 500);
+  }
+}
+.mat-form-field-prefix {
+  margin-right: 0.8rem;
+  color: map-get(map-get($mat-santan, contrast), 100);
+}
+.error-field {
+  color: $txt-error-color;
+}
+
+// SELECT
+.mat-select {
+  & .mat-select-value,
+  & .mat-select-arrow-wrapper .mat-select-arrow {
+    color: $color-components;
+  }
+
+  & .mat-select-value {
+    & .mat-select-placeholder {
+      color: $color-components;
+    }
+  }
+}
+
+.mat-select-panel {
+  background-color: $bg-components;
+
+  & .mat-option {
+    &.mat-selected {
+      &:not(.mat-option-multiple) {
+        background-color: rgba($color-theme, 0.1);
+        color: $color-theme;
+      }
+    }
+
+    &:hover:not(.mat-option-multiple) {
+      background-color: darken($bg-components, 5);
+      color: $color-theme;
+    }
+
+    color: $color-components;
+  }
+}
+
+// TABLAS
+.mat-table {
+  background-color: $bg-components;
+  color: $color-components;
+
+  & .mat-header-row {
+    height: $table-header-height;
+
+    & .mat-header-cell {
+      text-align: center;
+      font-weight: bold;
+      color: $color-components;
+
+      & .mat-sort-header-container {
+        justify-content: center;
+
+        & .mat-sort-header-arrow {
+          color: rgba($color-components, 0.7);
+        }
+      }
+    }
+  }
+
+  & .mat-row {
+    & .mat-cell {
+      color: $color-components;
+    }
+  }
+}
+
+// PAGINADOR
+.mat-paginator {
+  background-color: $bg-components;
+  color: $color-components;
+
+  & .mat-paginator-outer-container {
+    & .mat-paginator-container {
+      & .mat-paginator-range-actions {
+        & .mat-icon-button {
+          color: $color-components;
+
+          &[disabled][disabled] {
+            color: lighten($color-components, 40);
+          }
+        }
+      }
+    }
+  }
+}
+
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}
+
+// MAT MENU
+.mat-menu-item {
+  color: $color-components;
+
+  &:hover {
+    &:not([disabled]) {
+      background-color: lighten($color-theme, 50%);
+      color: $color-theme;
+    }
+  }
+}
+
+.mat-menu-panel {
+
+  min-width: $sidebar-width;
+  background-color: $bg-components;
+
+  .mat-menu-content {
+    &:not(:empty) {
+      padding: 0 !important;
+    }
+
+    & .title-menu {
+      background-color: $color-theme;
+      color: lighten($color-theme, 50%);
+    }
+  }
+}

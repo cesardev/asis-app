@@ -1,6 +1,44 @@
-@import 'assets/sass/main';
-@import 'assets/sass/variables';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+@import './assets/sass/fonts';
+@import './assets/sass/variables';
+@import './assets/sass/main';
 
+@include mat-core();
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Duración de animaciones
+.a-2ms { animation-duration: .2s; }
+.a-3ms { animation-duration: .3s; }
+.a-4ms { animation-duration: .4s; }
+.a-5ms { animation-duration: .5s; }
+.a-6ms { animation-duration: .6s; }
+.a-7ms { animation-duration: .7s; }
+.a-8ms { animation-duration: .8s; }
+.a-9ms { animation-duration: .9s; }
+.a-10ms { animation-duration: 1s; }
+
+// Cursores
+.c-pointer { cursor: pointer; }
+.c-default { cursor: default; }
+.c-move { cursor: move; }
+.c-text { cursor: text; }
+.c-progress { cursor: progress; }
+.c-not-allowed { cursor: not-allowed; }
+.c-none { cursor: none; }
+.c-no-drop { cursor: no-drop; }
+.c-all-scroll { cursor: all-scroll; }
+.c-cell { cursor: cell; }
+.c-copy { cursor: copy; }
+.c-grab { cursor: grab; }
+.c-grabbing { cursor: grabbing; }
+.c-help { cursor: help; }
+.c-wait { cursor: wait; }
+.c-zoom-in { cursor: zoom-in; }
+.c-zoom-out { cursor: zoom-out; }
+
+.shadow-none {
+  box-shadow: none;
+  &:hover,&:focus,&:active {
+    box-shadow: none;
+  }
+}

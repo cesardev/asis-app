@@ -1,2 +1,19 @@
-<router-outlet></router-outlet>
+<section class="neo-app"
+  [style.fontSize.px]="settings.config.pixelsBase"
+  [ngClass]="settings.config.theme"
+  [class.header-fixed]="settings.config.isHeaderFixed == 1"
+  [class.sidebar-fixed]="settings.config.isSidebarFixed == 1 && settings.config.isSidebarOpen == 1 && settings.config.sidebarPos == 'vertical'"
+  [class.sidebar-normal]="settings.config.sidebarType == 'normal' && settings.config.isSidebarOpen == 1 && settings.config.sidebarPos == 'vertical'"
+  [class.sidebar-mini]="settings.config.sidebarType == 'mini' && settings.config.isSidebarOpen == 1 && settings.config.sidebarPos == 'vertical'"
+  [class.navbar-fixed]="settings.config.isSidebarFixed == 1 && settings.config.isSidebarOpen == 1 && settings.config.sidebarPos == 'horizontal'"
+  [class.footer-fixed]="settings.config.isFooterFixed == 1">
 
+  <article class="wrapper">
+
+    <router-outlet></router-outlet>
+
+    <app-loader></app-loader>
+
+  </article>
+
+</section>

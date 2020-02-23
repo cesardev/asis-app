@@ -1,0 +1,40 @@
+{
+  "estatus": {
+    "codigo": 1,
+    "mensaje": "Operacion Exitosa"
+  },
+  "resultado": [
+    {
+      "idMenu": 1,
+      "idPadre": 0,
+      "cdMenu": "MP001",
+      "nbMenu": "Mi perfil",
+      "nbUri": "/mi-perfil",
+      "txUrl": ""
+    },
+    {
+      "idMenu": 2,
+      "idPadre": 0,
+      "cdMenu": "AC002",
+      "nbMenu": "Acciones comerciales",
+      "nbUri": "/acciones-comerciales",
+      "txUrl": ""
+    },
+    {
+      "idMenu": 3,
+      "idPadre": 0,
+      "cdMenu": "MR003",
+      "nbMenu": "Mis referidos",
+      "nbUri": "/mis-referidos",
+      "txUrl": ""
+    },
+    {
+      "idMenu": 4,
+      "idPadre": 0,
+      "cdMenu": "DV004",
+      "nbMenu": "Derivación ventanilla",
+      "nbUri": "/derivacion-ventanilla",
+      "txUrl": ""
+    }
+  ]
+}

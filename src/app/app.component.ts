@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppSettings } from './config/app-settings.config';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-neo',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'asis-app';
+export class AppComponent implements OnInit {
+
+  constructor(
+    public settings: AppSettings
+  ) { }
+
+  ngOnInit(): void { }
 }

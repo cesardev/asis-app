@@ -1,0 +1,82 @@
+<div class="custom-app" [ngClass]="{'show': isSettings}">
+
+  <button class="btn toggle shadow-none"
+    (click)="isSettings = !isSettings">
+    <i class="fa fa-spin fa-cog"></i>
+  </button>
+
+  <div class="card">
+
+    <div class="card-header text-center">
+      <span translate>PERSONALIZAR</span>
+    </div>
+
+    <div class="card-body mt-2">
+      <h6>
+        <span translate>Orientación del menú</span>
+      </h6>
+      <mat-radio-group class="radiogroup-vertical" [(ngModel)]="settings.config.sidebarPos"
+        labelPosition="before">
+        <mat-radio-button class="o-radio" value="vertical">Vertical</mat-radio-button>
+        <mat-radio-button class="o-radio" value="horizontal">Horizontal</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="card-body mt-2">
+      <h6>
+        <span translate>Tipo de navegación</span>
+      </h6>
+      <mat-radio-group class="radiogroup-vertical"
+        [(ngModel)]="settings.config.sidebarType"
+        labelPosition="before">
+        <mat-radio-button class="o-radio" value="normal">Íconos y etiquetas</mat-radio-button>
+        <mat-radio-button class="o-radio" value="mini">Solo íconos</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="card-body mt-2">
+      <h6>
+        <span translate>Fijar componentes</span>
+      </h6>
+
+      <div class="slidetoggle-between">
+        <mat-slide-toggle class="switch"
+          [disableRipple]="true"
+          labelPosition="before"
+          [checked]="settings.config.isHeaderFixed == 1"
+          (change)="changeHeader()">
+          Cabecera
+        </mat-slide-toggle>
+        <mat-slide-toggle class="switch"
+          [disableRipple]="true"
+          labelPosition="before"
+          [checked]="settings.config.isSidebarFixed == 1"
+          (change)="changeSidebar()">
+          Navegación
+        </mat-slide-toggle>
+        <mat-slide-toggle class="switch"
+          [disableRipple]="true"
+          labelPosition="before"
+          [checked]="settings.config.isFooterFixed == 1"
+          (change)="settings.config.isFooterFixed = settings.config.isFooterFixed == 1 ? 0 : 1">
+          Créditos
+        </mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="card-body mt-2 mb-2">
+      <h6>
+        <span translate>Enfocar</span>
+      </h6>
+
+      <mat-slider class="w-100"
+        [max]="20"
+        [min]="12"
+        [step]="1"
+        [thumbLabel]="true"
+        [tickInterval]="1"
+        [(ngModel)]="settings.config.pixelsBase">
+      </mat-slider>
+    </div>
+  </div>
+</div>

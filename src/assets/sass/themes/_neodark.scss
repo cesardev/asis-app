@@ -1,0 +1,119 @@
+/*******************************************
+***** APP *********************************
+*/
+$bg-components: #2c3e50;
+$color-components: #ecf0f1;
+$color-border-components: #ecf0f1;
+$color-theme: #ecf0f1;
+
+$mat-santan: (
+  50: lighten($color-theme, 50%),
+  100: lighten($color-theme, 45%), // Color accent del color primario
+  200: lighten($color-theme, 35%),
+  300: lighten($color-theme, 30%),
+  400: lighten($color-theme, 20%),
+  500: $color-theme, // Color primario
+  600: darken($color-theme, 5%),
+  700: darken($color-theme, 10%),
+  800: darken($color-theme, 15%),
+  900: darken($color-theme, 20%),
+  A100: lighten($color-theme, 15%),
+  A200: lighten($color-theme, 10%), // Color de plugins
+  A400: lighten($color-theme, 6%),
+  A700: lighten($color-theme, 4%),
+  contrast: (
+    50: #111111,
+    100: #222222,
+    200: #333333,
+    300: #444444,
+    400: #555555, // Color secundario
+    500: #eeeeee,
+    600: #dddddd,
+    700: #cccccc,
+    800: #bbbbbb,
+    900: #aaaaaa,
+    A100: #e9e9e9, // Color accent del color secundario
+    A200: #d9d9d9,
+    A400: #c9c9c9,
+    A700: #b9b9b9,
+  )
+);
+
+/*******************************************
+***** GENERAL *****************************
+*/
+// $main-bg-color: #ecf0f5;
+$main-bg-color: lighten($bg-components, 5%);
+$main-text-color: $color-components;
+
+$border-color: rgba(0, 0, 0, 0.125);
+$border-color-sm: darken($bg-components, 5%);
+$border-color-lg: darken($bg-components, 15%);
+$box-shadow-sm: 0 1px 4px 0 rgba(38,38,38,.3);
+$box-shadow-lg: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+$hover-color: darken($bg-components, 5%);
+
+/*******************************************
+***** HEADER *****************************
+*/
+// Color de fondo de la cabecera
+$bg-header: $bg-components;
+// Color de texto de la cabecera
+$txt-header: $color-components;
+
+/*******************************************
+***** SIDEBAR *****************************
+*/
+$bg-sidebar: $bg-components;
+$bg-title-sidebar: $color-theme;
+$color-title-sidebar: $bg-components;
+$txt-sidebar: $color-components;
+
+/*******************************************
+***** FOOTER ******************************
+*/
+$bg-footer: $bg-components;
+
+/*******************************************
+***** CUSTOM APP COMPONENT ***************
+*/
+$bg-custom-app: $bg-header;
+$txt-custom-app: $txt-header;
+
+
+/*******************************************
+***** BOOTSTRAP ***************************
+*/
+$card-header-bg-color: $bg-components;
+
+$primary-color: #cf0a2c;
+$dark-primary-color: #c50d2b;
+$success-color: #27ae60;
+$dark-success-color: #649945;
+$info-color: #00BBD3;
+$dark-info-color: #0096A6;
+$warning-color: #FE9700;
+$dark-warning-color: #F47B00;
+$danger-color: #d32f2f;
+$dark-danger-color: #b71c1c;
+$gray-color: #969597;
+$dark-gray-color: #55565a;
+$inverse-color: #292B2C;
+$dark-inverse-color: #1C1E1F;
+
+$breadcrumb-bg-color: $bg-components;
+$breadcrumb-color: lighten($color-theme, 5%);
+
+// Cards
+$bg-box: $bg-components;
+$color-txt-box: $color-components;
+$color-border-card: $color-border-components;
+
+// SweetAlert
+$border-color-swal: lighten($color-theme, 5%);
+$color-cancel-button: $color-components;
+$bg-cancel-button-swal: lighten($bg-components, 2%);
+$question-color: #87adbd;
+
+// FORM
+$txt-error-color: #ec0000;

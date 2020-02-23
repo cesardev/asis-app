@@ -1,0 +1,439 @@
+// En este scss van los estilos de los elementos cambiantes con temas
+
+// TEMA DE ANGULAR MATERIAL
+// @include mat-core();
+
+$neo-primary: mat-palette($mat-santan);
+$neo-accent: mat-palette($mat-santan, A200, A100, A400);
+$neo-warn: mat-palette($mat-orange);
+$neo-theme: mat-light-theme($neo-primary, $neo-accent, $neo-warn);
+
+@include angular-material-theme($neo-theme);
+
+// @include mat-core();
+
+// $neo-primary: mat-palette($mat-indigo);
+// $neo-accent: mat-palette($mat-pink, A200, A100, A400);
+// $neo-warn: mat-palette($mat-red);
+// $neo-theme: mat-light-theme($neo-primary, $neo-accent, $neo-warn);
+
+// @include angular-material-theme($neo-theme);
+
+@import "mixins";
+@import "bootstrapoverride";
+@import "matoverride";
+
+// CONTENEDORES PRINCIPALES
+.wrapper,
+.wrapper-inner {
+  background-color: $main-bg-color;
+  color: $main-text-color;
+}
+
+// HEADER
+.header {
+  background-color: $bg-header;
+  box-shadow: $box-shadow-sm;
+  color: $txt-header;
+
+  // Bars menu
+  & .header-togglenav {
+
+    &:hover {
+      background-color: $hover-color;
+      color: $color-theme;
+
+      & .b-bar {
+        & div {
+          background-color: $color-theme;
+        }
+      }
+    }
+
+    & .b-bar {
+      & div {
+        background-color: $txt-header;
+      }
+    }
+  }
+
+  // Información de usuario
+  & .header-user {
+    & .img-user {
+      & i {
+        color: map-get($mat-santan, 500);
+      }
+    }
+  }
+
+  // Menu en el header
+  & .header-navbar {
+
+    & li,
+    & li.active {
+      &::after {
+        background-color: map-get($mat-santan, 500);
+      }
+
+      & a {
+        color: $txt-header;
+      }
+    }
+  }
+
+  // Íconos de acción
+  & .header-icons {
+    & i {
+      color: $txt-header;
+      border-right: 1px solid $border-color-sm;
+
+      &:hover,
+      &.active {
+        color: map-get($mat-santan, 500);
+      }
+    }
+  }
+
+  // Búsqueda
+  & .header-search {
+    & i {
+      &:hover {
+        color: map-get($mat-santan, 500);
+      }
+    }
+  }
+}
+
+// SIDEBAR
+.sidebar-template {
+  border-top: 1px solid $border-color-sm;
+  border-bottom: 1px solid $border-color-sm;
+}
+
+.sidebar {
+  background-color: $bg-sidebar;
+  box-shadow: $box-shadow-sidebar;
+  border-right: 1px solid $border-color-lg;
+
+  & .sidebar-title {
+    color: $color-title-sidebar;
+    background-color: $bg-title-sidebar;
+  }
+
+  & .sidebar-menu {
+
+    & ul.nav-items {
+      & li {
+        & a {
+          color: $txt-sidebar;
+          border-bottom: 1px solid $border-color-sm;
+
+          &:hover,
+          &.active {
+            color: map-get($mat-santan, 400);
+            border-color: $border-color-lg;
+            background-color: $hover-color;
+          }
+        }
+      }
+    }
+
+    & .sidebar-menu-item {
+      color: $txt-sidebar;
+
+      &:hover { color: $color-theme; }
+
+      & div {
+        & a {
+          color: $txt-sidebar;
+          &:hover { color: $color-theme; }
+        }
+      }
+    }
+  }
+}
+
+&.sidebar-fixed {
+  & .header-togglenav,
+  & .header-logo {
+    background-color: $bg-sidebar;
+    color: $txt-sidebar;
+  }
+}
+
+// NAVBAR
+.navbar {
+  background-color: $bg-sidebar;
+  color: $txt-sidebar;
+  border-top: 1px solid $border-color-sm;
+  box-shadow: $box-shadow-navbar;
+
+  & .navbar-title {
+    color: $color-title-sidebar;
+    background-color: $bg-title-sidebar;
+  }
+
+  & .nav-items-menu {
+    color: $txt-sidebar;
+
+    &:hover { color: $color-theme; }
+
+    & div {
+      & a {
+        color: $txt-sidebar;
+        &:hover { color: $color-theme; }
+      }
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  background-color: $bg-footer;
+  border-top: 1px solid $border-color-lg;
+}
+
+// BREADCRUMBS
+.breadcrumb {
+  color: $breadcrumb-color;
+  background-color: $breadcrumb-bg-color;
+}
+
+// CUSTOM APP
+.custom-app {
+  & .btn {
+    background-color: $bg-custom-app;
+    color: $txt-custom-app;
+    border-color: $border-color;
+
+    &:hover {
+      background-color: $hover-color;
+      color: $color-theme;
+    }
+  }
+
+  & .card {
+    background-color: $bg-custom-app;
+    border: 1px solid $border-color;
+    box-shadow: $box-shadow-lg;
+
+    & .card-header {
+      background-color: $bg-custom-app;
+    }
+
+    & .card-body {
+      & h6 {
+        border-bottom: 1px solid $border-color-sm;
+      }
+    }
+  }
+}
+
+// LOADER
+.loader-overlay {
+  & .loader {
+    &::before {
+      background-color: map-get($mat-santan, A400);
+    }
+  }
+}
+
+// SweetAlert
+.custom-alert-container {
+
+  &.success {
+    & .swal2-modal {
+      border-top: 0.3rem solid $success-color;
+
+      & .swal2-header {
+        & .swal2-title {
+          color: $success-color;
+        }
+      }
+
+      & .swal2-icon.swal2-success {
+        border-color: $success-color;
+        color: $success-color;
+        & .swal2-success-line-tip,
+        & .swal2-success-line-long {
+          background-color: $success-color;
+        }
+        & .swal2-success-ring {
+          border: .25em solid rgba($success-color, .3);
+        }
+      }
+
+      & .swal2-actions {
+        & .swal2-confirm {
+          color: lighten($success-color, 50);
+          background-color: $success-color;
+          border-color: $success-color;
+
+          &:focus {
+            box-shadow: 0 0 0 2px rgba($success-color, 0.5);
+          }
+        }
+      }
+    }
+  }
+  &.info {
+    & .swal2-modal {
+      border-top: 0.3rem solid $info-color;
+
+      & .swal2-header {
+        & .swal2-title {
+          color: $info-color;
+        }
+      }
+
+      & .swal2-icon.swal2-info {
+        border-color: rgba($info-color, 0.4);
+        color: $info-color;
+      }
+
+      & .swal2-actions {
+        & .swal2-confirm {
+          color: lighten($info-color, 50);
+          background-color: $info-color;
+          border-color: $info-color;
+
+          &:focus {
+            box-shadow: 0 0 0 2px rgba($info-color, 0.5);
+          }
+        }
+      }
+    }
+  }
+  &.warning {
+    & .swal2-modal {
+      border-top: 0.3rem solid $warning-color;
+
+      & .swal2-header {
+        & .swal2-title {
+          color: $warning-color;
+        }
+      }
+
+      & .swal2-icon.swal2-warning {
+        border-color: rgba($warning-color, 0.4);
+        color: $warning-color;
+      }
+
+      & .swal2-actions {
+        & .swal2-confirm {
+          color: lighten($warning-color, 50);
+          background-color: $warning-color;
+          border-color: $warning-color;
+
+          &:focus {
+            box-shadow: 0 0 0 2px rgba($warning-color, 0.5);
+          }
+        }
+      }
+    }
+  }
+  &.error {
+    & .swal2-modal {
+      border-top: 0.3rem solid $danger-color;
+
+      & .swal2-header {
+        & .swal2-title {
+          color: $danger-color;
+        }
+      }
+
+      & .swal2-icon.swal2-error {
+        border-color: rgba($danger-color, 0.4);
+
+        & .swal2-x-mark-line-left,
+        & .swal2-x-mark-line-right {
+          background-color: $danger-color;
+        }
+      }
+
+      & .swal2-actions {
+        & .swal2-confirm {
+          color: lighten($danger-color, 50);
+          background-color: $danger-color;
+          border-color: $danger-color;
+
+          &:focus {
+            box-shadow: 0 0 0 2px rgba($danger-color, 0.5);
+          }
+        }
+      }
+    }
+  }
+  &.question {
+    & .swal2-modal {
+      border-top: 0.3rem solid $question-color;
+
+      & .swal2-header {
+        & .swal2-title {
+          color: $question-color;
+        }
+      }
+
+      & .swal2-icon.swal2-question {
+        border-color: rgba($question-color, 0.4);
+        color: $question-color;
+      }
+
+      & .swal2-actions {
+        & .swal2-confirm {
+          color: lighten($question-color, 50);
+          background-color: $question-color;
+          border-color: $question-color;
+
+          &:focus {
+            box-shadow: 0 0 0 2px rgba($question-color, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  & .swal2-modal {
+    background-color: $bg-components;
+    box-shadow: $box-shadow-lg;
+
+    & .swal2-content {
+      color: $color-components;
+    }
+
+    & .swal2-actions {
+      justify-content: space-around;
+      margin: 2rem 0 0 0;
+
+      & .swal2-cancel {
+        color: $color-cancel-button;
+        background-color: $bg-cancel-button-swal;
+
+        &:focus {
+          box-shadow: 0 0 0 2px rgba($bg-cancel-button-swal, 0.5);
+        }
+      }
+    }
+  }
+}
+
+.custom-toast {
+  & .swal2-popup {
+    background-color: $bg-components;
+
+    &.swal2-toast {
+      box-shadow: $box-shadow-sm;
+    }
+
+    & .swal2-header {
+      & .swal2-title,
+      & .swal2-close { color: $color-components; }
+    }
+  }
+
+  & .swal2-close {
+    outline: none;
+  }
+}
+
+@import "appoverride";

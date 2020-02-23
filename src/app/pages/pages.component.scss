@@ -1,0 +1,15 @@
+@import "../../assets/sass/variables";
+
+.wrapper-inner {
+  min-height: calc(100% - #{$footer-height});
+  height: auto;
+
+  & .pages,
+  & .route-pages {
+    min-height: calc(100vh - (#{$header-height + $footer-height}));
+  }
+
+  & .route-pages {
+    padding: $padding-route;
+  }
+}

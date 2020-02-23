@@ -1,0 +1,20 @@
+/* ---- ---- ---- LOGIN ---- ---- ---- */
+.login {
+  & .logincontent {
+    & .login-form {
+      & .form_inputs {
+        & .form-inputs_input {
+          box-shadow: $box-shadow-lg;
+        }
+      }
+      & .form-btns {
+        & .btn-login {
+          box-shadow: $box-shadow-lg;
+          &:hover {
+            box-shadow: $box-shadow-sm;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../../assets/sass/mixins';
+
+.custom-app {
+  position: fixed;
+  top: 5.714rem;
+  right: -15.14rem;
+  z-index: 995;
+  width: 15rem;
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+
+  &.show {
+    right: -1px;
+  }
+
+  & .btn {
+    position: absolute;
+    left: -2.429rem;
+    padding: 0.5rem 0.8571rem 0.5rem 0.7143rem;
+    border-style: solid;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 0;
+    border-bottom-left-radius: 0.2857rem;
+    border-top-left-radius: 0.2857rem;
+    cursor: pointer;
+    z-index: 99;
+
+    &:focus {
+        box-shadow: none;
+    }
+  }
+
+  & .card {
+    .card-header {
+      padding: 0.34rem 1.25rem;
+      border-radius: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+      border-bottom: none;
+    }
+
+    .card-body {
+      padding: 2px 1.429rem;
+
+      h6 {
+        padding-bottom: 2px;
+        font-weight: bold;
+      }
+    }
+  }
+
+}

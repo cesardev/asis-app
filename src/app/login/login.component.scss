@@ -1,0 +1,106 @@
+@import '../../assets/sass/mixins';
+
+$color-primary: #00BCD4;
+$color-secondary: #37474F;
+$color-white: #FAFAFA;
+
+.login {
+  width: 100%;
+  background-color: $color-secondary;
+
+  & .login-rounded {
+    position: fixed;
+    width: 120%;
+    height: 40rem;
+    top: -50%;
+    left: -10%;
+    background-color: $color-white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  & .logincontent {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: $color-white;
+
+    @include v-space-between;
+
+    & .login-identity {
+      position: relative;
+      color: #000;
+      height: 17.5rem;
+
+      @include vd-flex-center;
+
+      & img {
+        width: 15rem;
+      }
+
+      & .login-name {
+        font-weight: bold;
+        color: $color-secondary;
+      }
+    }
+
+    & .login-form {
+      width: 100%;
+      @include vd-flex-center;
+
+      & .form_inputs {
+        & .form-inputs_input {
+          width: 20rem;
+          padding: 0.35rem;
+          border-radius: 7rem;
+          background-color: $color-white;
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+
+          & i {
+            color: $color-secondary;
+            font-size: 1.5rem;
+          }
+
+          & input {
+            width: 100%;
+            margin: 0 0.5rem;
+            font-size: 1.1rem;
+            outline: none;
+            border: none;
+          }
+        }
+      }
+
+      & .form-btns {
+        margin-top: 2rem;
+
+        & .btn-login {
+          // width: 20rem;
+          outline: none;
+          border: none;
+          background-color: $color-primary;
+          color: $color-white;
+          padding: 0.3rem 1rem;
+          font-size: 1.1rem;
+          border-radius: 7rem;
+
+          &:active {
+            // width: 19.8rem;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    & .login-footer {
+      @include h-space-between;
+      padding: 0.5rem 1rem;
+    }
+  }
+}

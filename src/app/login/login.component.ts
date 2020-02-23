@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { environment } from './../../environments/environment';
+import { Component } from '@angular/core';
+import { AppSettings } from 'app/config/app-settings.config';
 
 @Component({
-  selector: 'app-login',
+  selector: 'neo-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+  public assets = environment.assets;
 
-  ngOnInit() {
-  }
+  constructor(
+    public settings: AppSettings
+  ) { }
 
 }
