@@ -3,18 +3,32 @@
   & .logincontent {
     & .login-form {
       & .form_inputs {
-        & .form-inputs_input {
-          box-shadow: $box-shadow-lg;
+        & .form-inputs_content {
+          & .form-inputs_input {
+            box-shadow: $box-shadow-lg;
+          }
         }
       }
       & .form-btns {
+        &.form-btns-stroke {
+          & .btn-stroke {
+            &:hover {
+              box-shadow: $box-shadow-lg;
+            }
+          }
+        }
         & .btn-login {
-          box-shadow: $box-shadow-lg;
+          box-shadow: $box-shadow-sm;
           &:hover {
-            box-shadow: $box-shadow-sm;
+            box-shadow: $box-shadow-lg;
           }
         }
       }
     }
   }
+}
+
+/* ---- ---- ---- ERRORS ---- ---- ---- */
+.error-forms {
+  color: $txt-error-color;
 }

@@ -13,8 +13,8 @@ export class PagesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    document.getElementById('maincontent')
-      .classList.add(this.settings.config.theme);
+    // document.getElementById('maincontent')
+    //   .classList.add(this.settings.config.theme);
 
     if ( window.innerWidth <= 768 ) {
       this.settings.config.isSidebarOpen = 0;

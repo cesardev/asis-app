@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { LoaderComponent } from './utils/loader/loader.component';
 import { RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { GestureConfig } from '@angular/material';
+import { MSG } from './config/msg-constants.config';
 
 // Configuración del ripple de angular material
 const globalRippleConfig: RippleGlobalOptions = {
@@ -33,6 +34,7 @@ const globalRippleConfig: RippleGlobalOptions = {
   ],
   providers: [
     AppSettings,
+    MSG,
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }
   ],

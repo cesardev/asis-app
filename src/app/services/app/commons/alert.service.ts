@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AngularService } from './angular.service';
+import { UtilService } from './util.service';
 import Swal from 'sweetalert2';
 
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {
 
-  constructor(private angular: AngularService) { }
+  constructor(
+    private util: UtilService
+  ) { }
 
   public success( title: string, msg?: any, method?: () => void ) {
     this.viewAlert(title, 'success', msg, method);
@@ -55,8 +57,8 @@ export class AlertService {
     const fakeMethod = () => { return; };
 
     if (typeof msg === 'function') {
-      methodCancel = this.angular.copy(methodSuccess);
-      methodSuccess = this.angular.copy(msg);
+      methodCancel = this.util.copy(methodSuccess);
+      methodSuccess = this.util.copy(msg);
     }
 
     const mixinSwal = Swal.mixin({
@@ -92,12 +94,17 @@ export class AlertService {
     let animate: string;
 
     if (typeof position === 'number') {
-      timer = this.angular.copy(position);
+      timer = this.util.copy(position);
       position = null;
     }
 
-    // if ( type === 'error' ) { animate = 'a-5ms bounceIn'; }
-    // else { animate = 'a-2ms fadeInDown'; }
+    if ( (null || undefined) === timer ) {
+      timer = 3000;
+    } else {
+      if ( timer === 0 ) {
+        timer = null;
+      }
+    }
 
     animate = type === 'error' ? 'a-5ms bounceIn' : 'a-2ms fadeInDown';
 
@@ -113,7 +120,7 @@ export class AlertService {
       buttonsStyling: false,
       showCloseButton: true,
       showConfirmButton: false,
-      timer: timer || 3000
+      timer
     }).fire({
       icon: type || 'info',
       title: noti

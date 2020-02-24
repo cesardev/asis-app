@@ -4,7 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {
   AppGuard,
   AuthService,
-  AngularService,
+  UtilService,
   AlertService,
   StorageService,
   AppService
@@ -22,7 +22,7 @@ import { RequestInterceptor } from './auth/request.interceptor';
   providers: [
     AppGuard,
     AuthService,
-    AngularService,
+    UtilService,
     AlertService,
     StorageService,
     AppService,

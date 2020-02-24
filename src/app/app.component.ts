@@ -12,5 +12,8 @@ export class AppComponent implements OnInit {
     public settings: AppSettings
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    document.getElementById('maincontent')
+      .classList.add(this.settings.config.theme);
+  }
 }

@@ -10,25 +10,53 @@
       </h4>
     </div>
 
-    <form class="login-form" novalidate>
+    <form #formLogin="ngForm" class="login-form" novalidate>
+
+      <div class="form-btns form-btns-stroke mb-5">
+        <button class="btn-action btn-stroke"
+          (click)="goExit( formLogin )">
+          Salida
+        </button>
+        <button class="btn-action btn-stroke"
+          (click)="goArrival( formLogin )">
+          Llegada
+        </button>
+      </div>
 
       <div class="form_inputs">
 
-        <div class="form-inputs_input mb-3">
-          <i class="fas fa-user-circle icon-left"></i>
-          <input type="text" placeholder="Usuario" />
+        <div class="form-inputs_content mb-3">
+          <div class="form-inputs_input">
+            <i class="fas fa-user-circle icon-left"></i>
+            <input type="text" placeholder="Usuario"
+              #username="ngModel" name="username"
+              [(ngModel)]="user.username" required />
+          </div>
+          <span class="error-forms"
+            *ngIf="username.dirty && username.invalid">
+            El usuario es requerido <i class="fa fa-info-circle"></i>
+          </span>
         </div>
 
-        <div class="form-inputs_input">
-          <i class="fas fa-lock icon-left"></i>
-          <input type="password" placeholder="Contraseña" />
-          <i class="fas fa-eye c-pointer icon-right"></i>
+        <div class="form-inputs_content">
+          <div class="form-inputs_input">
+            <i class="fas fa-lock icon-left"></i>
+            <input type="password" placeholder="Contraseña"
+              #password="ngModel" name="password"
+              [(ngModel)]="user.password" required />
+            <i class="fas fa-eye c-pointer icon-right"></i>
+          </div>
+          <span class="error-forms"
+            *ngIf="password.dirty && password.invalid">
+            La contraseña es requerida <i class="fa fa-info-circle"></i>
+          </span>
         </div>
 
       </div>
 
-      <div class="form-btns">
-        <button class="btn-login">
+      <div class="form-btns mt-5">
+        <button class="btn-action btn-login"
+          (click)="goLogin( formLogin )">
           Iniciar sesión
         </button>
       </div>

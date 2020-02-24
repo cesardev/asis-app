@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Injectable({providedIn: 'root'})
-export class AngularService {
+export class UtilService {
 
   private TYPED_ARRAY_REGEXP = /^\[object (?:Uint8|Uint8Clamped|Uint16|Uint32|Int8|Int16|Int32|Float32|Float64)Array\]$/;
   private stackSource = [];
@@ -10,12 +11,6 @@ export class AngularService {
   constructor() { }
 
   public isNumber(value: any): boolean {
-    // if ( typeof value === 'number' ) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
-
     return ( typeof value === 'number' ) ? true : false;
   }
 
@@ -175,4 +170,19 @@ export class AngularService {
 
     return this.copyElement(source);
   }
+
+  public validateForm( form: NgForm ): boolean {
+
+    let isValid = true;
+
+    Object.keys( form.controls ).forEach( control => {
+      if ( form.controls[control].invalid ) {
+        form.controls[control].markAsDirty();
+        isValid = false;
+      }
+    });
+
+    return isValid;
+  }
+
 }

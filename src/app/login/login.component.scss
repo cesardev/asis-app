@@ -3,6 +3,7 @@
 $color-primary: #00BCD4;
 $color-secondary: #37474F;
 $color-white: #FAFAFA;
+$width-form: 20rem;
 
 .login {
   width: 100%;
@@ -53,45 +54,88 @@ $color-white: #FAFAFA;
       @include vd-flex-center;
 
       & .form_inputs {
-        & .form-inputs_input {
-          width: 20rem;
-          padding: 0.35rem;
-          border-radius: 7rem;
-          background-color: $color-white;
-          display: flex;
-          flex-wrap: nowrap;
-          align-items: center;
+        width: $width-form;
 
-          & i {
-            color: $color-secondary;
-            font-size: 1.5rem;
+        & .form-inputs_content{
+          & .form-inputs_input {
+            // width: 20rem;
+            padding: 0.5rem;
+            border-radius: 7rem;
+            background-color: $color-white;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+  
+            & i {
+              color: $color-secondary;
+              font-size: 1.5rem;
+            }
+  
+            & input {
+              width: 100%;
+              margin: 0 0.5rem;
+              font-size: 1.1rem;
+              outline: none;
+              border: none;
+            }
           }
 
-          & input {
-            width: 100%;
-            margin: 0 0.5rem;
-            font-size: 1.1rem;
-            outline: none;
-            border: none;
+          & .error-forms {
+            // margin-left: 0.5rem;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            color: lighten(#ec0000, 33%) !important;
+            font-weight: 400;
+
+            & i {
+              margin: 0 0.5rem;
+            }
           }
         }
       }
 
       & .form-btns {
-        margin-top: 2rem;
+        width: $width-form;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
 
-        & .btn-login {
-          // width: 20rem;
+        &.form-btns-stroke {
+          justify-content: space-between;
+
+          & .btn-stroke {
+            width: 45%;
+            background-color: transparent;
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            transition: all 0.1s ease-in-out;
+
+            &:hover {
+              background-color: rgba($color-primary, 0.2);
+            }
+
+            &:active {
+              box-shadow: none;
+            }
+          }
+        }
+
+        & .btn-action {
           outline: none;
           border: none;
-          background-color: $color-primary;
-          color: $color-white;
           padding: 0.3rem 1rem;
           font-size: 1.1rem;
           border-radius: 7rem;
+        }
+
+        & .btn-login {
+          background-color: $color-primary;
+          color: $color-white;
+          transition: all 0.1s ease-in-out;
 
           &:active {
-            // width: 19.8rem;
             box-shadow: none;
           }
         }
