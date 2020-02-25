@@ -5,6 +5,7 @@ import { AlertService, UtilService } from 'app/services/app/services-app';
 import { NgForm } from '@angular/forms';
 import { UserLoginModel } from 'app/models/app/user.model';
 import { MSG } from 'app/config/msg-constants.config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'neo-login',
@@ -19,7 +20,8 @@ export class LoginComponent {
   constructor(
     public settings: AppSettings,
     private util: UtilService,
-    private alert: AlertService
+    private alert: AlertService,
+    private route: Router
   ) { }
 
   public goArrival( formLogin: NgForm ): void {
@@ -44,6 +46,7 @@ export class LoginComponent {
     } else {
       this.alert.success('Sesión iniciada', formLogin.controls.username.value);
       formLogin.resetForm();
+      this.route.navigate(['/pages']);
     }
   }
 

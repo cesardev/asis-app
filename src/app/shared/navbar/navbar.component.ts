@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSettings } from 'app/config/app-settings.config';
-import { AppService } from 'app/services/app/services-app';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'neo-navbar',
@@ -10,19 +8,10 @@ import { Subscription } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
 
-  private menuSuscription: Subscription;
-
   constructor(
-    public settings: AppSettings,
-    private appService: AppService
+    public settings: AppSettings
   ) { }
 
-  ngOnInit() {
-    this.menuSuscription = this.appService.getMenu().subscribe();
-  }
-
-  OnDestroy() {
-    this.menuSuscription.unsubscribe();
-  }
+  ngOnInit() { }
 
 }

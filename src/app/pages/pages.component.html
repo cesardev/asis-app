@@ -6,26 +6,14 @@
     [class.flex-row]="settings.config.sidebarPos == 'vertical'"
     [class.flex-column]="settings.config.sidebarPos == 'horizontal'">
 
-    <neo-sidebar *ngIf="settings.config.sidebarPos == 'vertical'
-      && settings.config.isSidebarOpen == 1" class="sidebar-template">
-    </neo-sidebar>
-
     <neo-navbar *ngIf="settings.config.sidebarPos == 'horizontal'
       && settings.config.isSidebarOpen == 1" class="navbar-template">
     </neo-navbar>
 
     <div class="route-pages">
 
-      <neo-total-cartera></neo-total-cartera>
-      <neo-agenda-interactiva></neo-agenda-interactiva>
-
       <router-outlet></router-outlet>
 
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <span>Fin</span>
     </div>
 
   </div>

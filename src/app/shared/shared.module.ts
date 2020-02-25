@@ -6,11 +6,7 @@ import { MatModules } from './../utils/mat-modules';
 import { PipesModule } from 'app/pipes/pipes.module';
 
 import { HeaderComponent } from './../shared/header/header.component';
-import { SidebarComponent } from './../shared/sidebar/sidebar.component';
 import { NavbarComponent } from 'app/shared/navbar/navbar.component';
-import { MenuItemComponent } from './menu-item/menu-item.component';
-import { TotalCarteraComponent } from './../shared/total-cartera/total-cartera.component';
-import { AgendaInteractivaComponent } from './../shared/agenda-interactiva/agenda-interactiva.component';
 import { FooterComponent } from './../shared/footer/footer.component';
 import { CustomAppComponent } from './../utils/custom-app/custom-app.component';
 
@@ -18,11 +14,11 @@ import { CustomAppComponent } from './../utils/custom-app/custom-app.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    SidebarComponent,
+    // SidebarComponent,
     NavbarComponent,
-    MenuItemComponent,
-    TotalCarteraComponent,
-    AgendaInteractivaComponent,
+    // MenuItemComponent,
+    // TotalCarteraComponent,
+    // AgendaInteractivaComponent,
     FooterComponent,
     CustomAppComponent
   ],
@@ -36,11 +32,11 @@ import { CustomAppComponent } from './../utils/custom-app/custom-app.component';
   ],
   exports: [
     HeaderComponent,
-    SidebarComponent,
+    // SidebarComponent,
     NavbarComponent,
-    MenuItemComponent,
-    TotalCarteraComponent,
-    AgendaInteractivaComponent,
+    // MenuItemComponent,
+    // TotalCarteraComponent,
+    // AgendaInteractivaComponent,
     FooterComponent,
     CustomAppComponent
   ]

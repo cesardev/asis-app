@@ -7,9 +7,9 @@ const routes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      { path: '', redirectTo: 'clientes', pathMatch: 'full' },
-      { path: 'clientes', loadChildren: 'app/pages/clientes/clientes.module#ClientesModule' },
-      { path: 'equipos', loadChildren: 'app/pages/equipos/equipos.module#EquiposModule' }
+      // { path: '', redirectTo: 'clientes', pathMatch: 'full' },
+      { path: '', pathMatch: 'full' },
+      // { path: 'clientes', loadChildren: 'app/pages/clientes/clientes.module#ClientesModule' }
     ]
   }
 ];
